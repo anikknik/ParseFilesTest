@@ -20,11 +20,13 @@ import static com.codeborne.pdftest.assertj.Assertions.assertThat;
 
 public class ParseZipTest {
 
+    ClassLoader cl = getClass().getClassLoader();
+
     @Test
     @DisplayName("Обработка ZIP архива c вложенными pdf,xls,csv")
     void parseZipFile() throws Exception {
         ZipFile zipFile = new ZipFile(
-                new File("src/test/resources/zip/TestParse.zip"));
+                new File(cl.getResource("zip/TestParse.zip").toURI()));
 
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
 
