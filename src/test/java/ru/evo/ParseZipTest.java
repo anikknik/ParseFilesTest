@@ -15,7 +15,10 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import static com.codeborne.pdftest.assertj.Assertions.assertThat;
+// if conflicts add before method org.assertj.core.api.Assertions
+//import static org.hamcrest.MatcherAssert.assertThat; - For PDF test
+import static org.assertj.core.api.Assertions.assertThat;//For XLS and CSV test
+import static com.codeborne.pdftest.assertj.Assertions.assertThat; //For PDF test
 
 
 public class ParseZipTest {
